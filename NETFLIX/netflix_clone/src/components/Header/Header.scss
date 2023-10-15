@@ -1,0 +1,67 @@
+$bg : rgb(3, 3, 3);
+.header{
+    height: 50px;
+    background-color: $bg;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    box-sizing: border-box;
+    justify-content: space-between;
+
+    >img{
+        height: 100%;
+
+    }
+    >div{
+       width: 100%;
+       margin-left: 4vmax;
+       font-weight: 400;
+       display: flex;
+       align-items: center;
+    }
+    >div>li{
+       margin-right: 5px;
+       box-sizing: border-box;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+        margin: 1vmax ;
+    }
+    >svg {
+        color: white;
+        cursor: pointer;
+        padding: 1rem;
+        font-size: 20px;
+
+        &:hover {
+            color: rgb(115, 128, 128);
+        }
+    }
+}
+.genre_dropdown{
+    margin-left: -10px;
+}
+.fa-bars{
+    display: none;
+    
+}
+.cross{
+    display: none;
+}
+
+ @media only screen and (max-width: 768px){
+    .fa-bars{
+        display: block;
+    }
+    .cross{
+        display: block;
+    }
+    .header{
+        
+        >div{
+            display: none;
+            font-size: 15px;
+        }
+    }
+}
