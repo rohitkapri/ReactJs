@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import "./Home.scss"
-import card_image from '../../download.jpeg'
+import "./Home.scss" 
 import axios from "axios"
-import {BrowserRouter as Router, Link} from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import { BiPlay } from "react-icons/bi"
 import { AiOutlinePlus } from "react-icons/ai"
 import {IoIosArrowForward} from "react-icons/io"
-
+import { useNavigate } from 'react-router-dom'
 
 
 const apikey = "b872368071b70996a2bffa4194e4e0f0"
@@ -19,19 +18,26 @@ const top_rated = "top_rated"
 const upcoming = "upcoming"                           
 
 const Card = ({img})=>{ 
+  const card_click = ()=>{
+    console.log("card_clicked");
+  }
   return(
     <div className='card'>
-       <img src={img} alt='cover'/>
+      <Link to= "/movie_card"  onClick={()=>card_click()}> <img src={img} alt='cover'/> </Link>
+      <div>
+        <button><BiPlay /></button>
+        <button><AiOutlinePlus/></button>
+      </div>
     </div>
   );
 }
+
 const Row =  ({ Title, arr = [] }) =>{
   const Handle_next_button = ()=>{
     console.log("next_clicked");  
   }
 
-  const [isgenereavailable, setisgenereavailable] = useState(false);
-
+  // const [isgenereavailable, setisgenereavailable] = useState(false);
 
 return(
       
@@ -104,7 +110,7 @@ const fetchGenre = async () => {
     fetchNow_Playing();
   }, []);
 
-
+const navigate = useNavigate();
   return (
     <div>
      <div className="banner" style={{
@@ -128,7 +134,7 @@ const fetchGenre = async () => {
 
      <div className="genrebox">
      {Genre.map((item) => (
-                    <Link key={item.id} to={`/genre/${item.id}`}>
+                    <Link key={item.id} to={`/genre/${item.id}`} onClick={()=>navigate('movie_card')}>
                         {item.name}
                     </Link>
                 ))}

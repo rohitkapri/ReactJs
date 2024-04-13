@@ -123,14 +123,56 @@ $bg : rgb(3, 3, 3);
     width: 200px;
     margin: 0.3rem;
     cursor: pointer;
+    // position: absolute;
+    display: flex;
     transition: transform 0.5s;
     &:hover {
       transform: translateY(-15px);
+      
+      >div {
+        
+        display: block;
+        opacity: 1;
+      }
     }
-    >img{
-        width: 150px;
-        border-radius: 5px;
+    
+    > a >img{
+      width: 150px;
+      height: 230px;
+      border-radius: 8px ;
+    }
+    >div{
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      display: none;
+      transition: transform 0.5s; 
+      
+      
 
+      >button{
+        padding: 1rem;
+        width: 50px;
+        border: none;
+        outline: none;
+        border-radius: 25px;
+        background-color: white;
+        z-index: 10;
+        margin: .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        
+        &:hover{
+          opacity: 0.8;
+        }
+        >svg{
+          font-size: 15px;
+        }
+      }
     }
   }
   .genrebox{
