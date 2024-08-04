@@ -4,7 +4,7 @@ This repository consist of my react js projects.
 The links for the we apps are :
 
 
-Netflix Clone : https://netflix-clone-app1111.netlify.app/   
+Netflix Clone : https://netflixcloneui123.netlify.app/
 
 
 Weather app: https://weather-app124.netlify.app/
